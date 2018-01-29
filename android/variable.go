@@ -97,6 +97,14 @@ type variableProperties struct {
 			Enabled *bool
 		}
 
+		Has_legacy_camera_hal1 struct {
+			Cflags []string
+		}
+
+		Uses_media_extensions struct {
+			Cflags []string
+		}
+
 		// include XenonHD variables
 		Xenonhd android.Product_variables
 	} `android:"arch_variant"`
@@ -172,6 +180,9 @@ type productVariables struct {
 	Override_rs_driver *string `json:",omitempty"`
 
 	DeviceKernelHeaders []string `json:",omitempty"`
+
+	Has_legacy_camera_hal1  *bool `json:",omitempty"`
+	Uses_media_extensions   *bool `json:",omitempty"`
 
 	// include XenonHD variables
 	Xenonhd android.ProductVariables
