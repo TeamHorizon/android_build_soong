@@ -81,6 +81,11 @@ func installClean(ctx Context, config Config, what int) {
 		return filepath.Join(productOutPath, path)
 	}
 
+        outDirPath := config.OutDir()
+        outDir := func(path string) string {
+                return filepath.Join(outDirPath, path)
+        }
+
 	// Host bin, frameworks, and lib* are intentionally omitted, since
 	// otherwise we'd have to rebuild any generated files created with
 	// those tools.
@@ -118,7 +123,8 @@ func installClean(ctx Context, config Config, what int) {
 		productOut("installer"),
 		productOut("odm"),
 		productOut("sysloader"),
-		productOut("testcases"))
+		productOut("testcases"),
+		outDir("ota_conf"))
 }
 
 // Since products and build variants (unfortunately) shared the same
