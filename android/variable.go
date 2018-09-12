@@ -20,7 +20,7 @@ import (
 	"runtime"
 	"strings"
 
-	"xenonhd/soong/android"
+	"xenon/soong/android"
 
 	"github.com/google/blueprint/proptools"
 )
@@ -118,7 +118,7 @@ type variableProperties struct {
 		}
 
 		// include XenonHD variables
-		Xenonhd android.Product_variables
+		Xenon android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -237,7 +237,7 @@ type productVariables struct {
 	VendorVars map[string]map[string]string `json:",omitempty"`
 
 	// include XenonHD variables
-	Xenonhd android.ProductVariables
+	Xenon android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
